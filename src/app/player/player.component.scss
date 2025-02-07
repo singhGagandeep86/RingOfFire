@@ -1,0 +1,29 @@
+
+.player{
+
+    display: flex;
+    align-items: center;
+    background-color: rgb(50, 50, 50, 0.8);
+    width: 392px;
+    border-top-left-radius: 65px;
+    border-bottom-left-radius: 65px;
+    padding: 4px;
+    >img{
+        width: 70px;
+        height: 70px;
+        margin-right: 22px;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.03);
+        }
+    }
+    >span{
+        font-size: 32px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+    }
+}
+
+.player-active{
+    background-color: rgb(255, 140, 0) !important;
+}

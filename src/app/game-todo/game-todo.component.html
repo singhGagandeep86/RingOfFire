@@ -1,4 +1,4 @@
 <mat-card [ngStyle]="{'padding': '22px 0px'}" appearance="outlined">
     <mat-card-title [ngStyle]="{'margin-bottom': '14px'}">{{ title }}</mat-card-title>
-    <mat-card-content>{{ description}} </mat-card-content>
+    <mat-card-content>{{ description.split('(')[0]}} <div class="warning"> {{ description.split('add Players')[1]}}</div> </mat-card-content>
 </mat-card>

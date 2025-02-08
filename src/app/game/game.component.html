@@ -16,7 +16,7 @@
         <img class="played-card" src="{{ 'assets/img/cards/' + card + '.png' }}">
         }
 
-        @if (pickCardAnimation) {
+        @if (pickCardAnimation && game.players.length > 0) {
         <img (click)="takeCard()" class="pick-card" style="right: 25px" src="{{ 'assets/img/cards/' + currentCard + '.png' }}">
         }
     </div>
@@ -25,6 +25,6 @@
 
 <app-game-todo [card]="currentCard" class="pin-bottom"></app-game-todo>
 
-<button mat-fab class="add-btn" (click)="openDialog()">
+<button [disabled]="game.players.length > 5" mat-fab class="add-btn" (click)="openDialog()">
     <mat-icon>add</mat-icon>
 </button>

@@ -34,7 +34,7 @@ export class GameComponent {
   }
   takeCard() {
 
-    if (!this.pickCardAnimation) {
+    if (!this.pickCardAnimation && this.game.players.length > 0) {
       this.currentCard = this.game.stack.pop() as string;
       this.pickCardAnimation = true;
       this.game.currentPlayer++;
@@ -49,6 +49,7 @@ export class GameComponent {
   }
 
   openDialog(): void {
+
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
     dialogRef.afterClosed().subscribe(name => {

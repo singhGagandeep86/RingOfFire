@@ -45,7 +45,8 @@ export class GameTodoComponent implements OnInit, OnChanges {
       this.description = this.cardAction[cardNumber - 1].description;
     } else {
       this.title = `Start Game`;
-      this.description = `Hey Friends! Let's Start this exciting drinking Game!`;
+      this.description = `Hey Friends! Let's Start this exciting drinking Game!
+                           Click on Button in right corner to add Players (Maximum 6 Players are allowed)`;
     }
 
   }

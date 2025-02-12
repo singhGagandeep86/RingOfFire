@@ -1,6 +1,6 @@
 
 export class Game {
-
+    
     public players: string[] = [];
     public stack: string[] = [];
     public playedCards: string[] = [];
@@ -18,6 +18,16 @@ export class Game {
             this.stack.push('hearts_' + i);
         }
         shuffle(this.stack);
+    }
+
+
+    public toJson() {
+        return {
+            players : this.players,
+            stack : this.stack,
+            playedCards : this.playedCards,
+            currentPlayer : this.currentPlayer
+        }
     }
 }
 

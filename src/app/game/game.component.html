@@ -24,7 +24,10 @@
 </div>
 
 <app-game-todo [card]="currentCard" class="pin-bottom"></app-game-todo>
-
-<button [disabled]="game.players.length > 5" mat-fab class="add-btn" (click)="openDialog()">
+<button  mat-fab class="add-btn" (click)="openDialog()">
     <mat-icon>add</mat-icon>
 </button>
+
+<!-- <button [disabled]="game.players.length > 5" mat-fab class="add-btn" (click)="openDialog()">
+    <mat-icon>add</mat-icon>
+</button> -->

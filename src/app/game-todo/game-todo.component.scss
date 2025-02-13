@@ -3,3 +3,11 @@
     color: red;
     font-weight: bold;
 }
+
+mat-card {
+    padding: 22px 0px;
+    
+    @media (max-width: 720px){
+        min-height: 160px;
+    }
+}

@@ -1,0 +1,33 @@
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-dialog-content {
+    max-width: 448px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.profile-pic {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 6px;
+
+    &:hover {
+        transform: scale(1.10);
+    }
+}
+
+.warn-btn{
+    color: #f44335;
+    &:hover{
+        background-color: #fdcaca
+    }
+}

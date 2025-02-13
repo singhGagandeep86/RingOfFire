@@ -1,0 +1,14 @@
+<div>
+
+    <h2 mat-dialog-title>Edit Player</h2>
+    <p>Select Player Profile Picture</p>
+    <mat-dialog-content>
+        @for (pic of allProfilePics; track pic) {
+        <img class="profile-pic" [mat-dialog-close]='pic' src="assets/profile-pics/{{ pic }}">
+        }
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button class="warn-btn" [mat-dialog-close]="'DELETE'">Delete</button>
+        <button mat-button  (click)="onNoClick()">Close</button>
+    </mat-dialog-actions>
+</div>

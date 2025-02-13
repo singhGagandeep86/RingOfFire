@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 
-
 @Component({
   selector: 'app-game-todo',
   imports: [MatCardModule, CommonModule],
@@ -10,7 +9,6 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './game-todo.component.scss'
 })
 export class GameTodoComponent implements OnInit, OnChanges {
-
   cardAction = [
     { title: 'Waterfall', description: 'Everyone has to start drinking at the same time. As soon as player 1 stops drinking, player 2 may stop drinking. Player 3 may stop as soon as player 2 stops drinking, and so on.' },
     { title: 'You', description: 'You decide who drinks' },
@@ -46,7 +44,7 @@ export class GameTodoComponent implements OnInit, OnChanges {
     } else {
       this.title = `Start Game`;
       this.description = `Hey Friends! Let's Start this exciting drinking Game!
-                           Click on Button in right corner to add Players (Maximum 6 Players are allowed)`;
+                           Click on Button in right corner to add Players (Maximum 7 Players are allowed)`;
     }
 
   }

@@ -1,8 +1,23 @@
 @for (player of game.players; track player; let i = $index) {
-<app-player [ngStyle]="{'top.px': 150 + (i * 100)}" 
-[playerActive]="i == game.currentPlayer" [name]="player"
-    class="player-data"></app-player>
+<app-player (click)="editPlayer(i)" [ngStyle]="{'top.px': 64 + (i * 100)}" [playerActive]="i == game.currentPlayer"
+    [image]="game.playersPic[i]" [name]="player" class="player-data hide-mobile"></app-player>
 }
+
+<div class="scroll-container hide-desktop">
+    @for (player of game.players; track player; let i = $index) {
+    <app-player-mobile (click)="editPlayer(i)" [ngStyle]="{'left.px': 10 + (i * 100), 'top.px': 0}"
+        [playerActive]="i == game.currentPlayer" [image]="game.playersPic[i]" [name]="player"></app-player-mobile>
+    }
+</div>
+
+@if (gameOver) {
+<div class="game-over">
+    <h1>PACK UP !! <br> THE PARTY IS OVER</h1>
+    <img src="./assets/img/game-over.jpg">
+</div>
+}
+
+@if (!gameOver) {
 <div class="field">
     <div class="card-stack">
 
@@ -16,18 +31,17 @@
         <img class="played-card" src="{{ 'assets/img/cards/' + card + '.png' }}">
         }
 
-        @if (pickCardAnimation && game.players.length > 0) {
-        <img (click)="takeCard()" class="pick-card" style="right: 25px" src="{{ 'assets/img/cards/' + currentCard + '.png' }}">
+        @if (game.pickCardAnimation && game.players.length > 0) {
+        <img (click)="takeCard()" class="pick-card" style="right: 25px"
+            src="{{ 'assets/img/cards/' + game.currentCard + '.png' }}">
         }
     </div>
 
 </div>
 
-<app-game-todo [card]="currentCard" class="pin-bottom"></app-game-todo>
-<button  mat-fab class="add-btn" (click)="openDialog()">
+
+<app-game-todo [card]="game.currentCard" class="pin-bottom"></app-game-todo>
+<button disabled="{{ game.players.length > 6}}" mat-fab class="add-btn" (click)="openDialog()">
     <mat-icon>add</mat-icon>
 </button>
-
-<!-- <button [disabled]="game.players.length > 5" mat-fab class="add-btn" (click)="openDialog()">
-    <mat-icon>add</mat-icon>
-</button> -->
+}
